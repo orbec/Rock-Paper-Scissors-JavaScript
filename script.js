@@ -20,7 +20,10 @@ function getComputerChoice(){
 function getHumanChoice(round){
     let choiceS = "";
     while (choiceS != "rock" && choiceS != "paper" && choiceS != "scissors"){
-        choiceS = prompt (`Round ${round}.\nOptions: rock, paper, scissors.\nPlease enter your choice:`).toLowerCase();
+        choiceS = prompt (`Round ${round}.
+            Options: rock, paper, scissors.
+            Please enter your choice:`)
+            .toLowerCase();
     }
     return choiceS;
     
@@ -32,10 +35,16 @@ function playGame(){
     let computerScore = 0;
 
     function playRound (humanChoice, computerChoice){
-        if ((humanChoice === "rock" && computerChoice === "scissors") || (humanChoice === "paper" && computerChoice === "rock") || (humanChoice === "scissors" && computerChoice === "paper")){
+        if ((humanChoice === "rock" && computerChoice === "scissors") 
+            || (humanChoice === "paper" && computerChoice === "rock") 
+            || (humanChoice === "scissors" && computerChoice === "paper")
+        ){
             humanScore++;
             return `You won! ${humanChoice} beats ${computerChoice}`;
-        }else if ((computerChoice === "rock" && humanChoice === "scissors") || (computerChoice === "paper" && humanChoice === "rock") || (computerChoice === "scissors" && humanChoice === "paper")){
+        }else if ((computerChoice === "rock" && humanChoice === "scissors") 
+            || (computerChoice === "paper" && humanChoice === "rock") 
+            || (computerChoice === "scissors" && humanChoice === "paper")
+        ){
             computerScore++;
             return `You lose! ${computerChoice} beats ${humanChoice}`;
         }else {

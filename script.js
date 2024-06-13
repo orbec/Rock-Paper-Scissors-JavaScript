@@ -30,21 +30,29 @@ function getHumanChoice(round){
     
 }
 
+function isWinner (choice1, choice2){
+    if ((choice1 === "rock" && choice2 === "scissors") 
+        || (choice1 === "paper" && choice2 === "rock") 
+        || (choice1 === "scissors" && choice2 === "paper")
+    ){
+        return true;
+    }else {
+        return false;
+    }
+}
+
 function playGame(){
     let humanScore = 0;
     let computerScore = 0;
 
     function playRound (humanChoice, computerChoice){
-        if ((humanChoice === "rock" && computerChoice === "scissors") 
-            || (humanChoice === "paper" && computerChoice === "rock") 
-            || (humanChoice === "scissors" && computerChoice === "paper")
-        ){
+        //evaluates if the human won
+        if (isWinner(humanChoice, computerChoice)){
             humanScore++;
             return `You won! ${humanChoice} beats ${computerChoice}`;
-        }else if ((computerChoice === "rock" && humanChoice === "scissors") 
-            || (computerChoice === "paper" && humanChoice === "rock") 
-            || (computerChoice === "scissors" && humanChoice === "paper")
-        ){
+        }
+        //evaluates if the computer won
+        else if (isWinner(computerChoice, humanChoice)){
             computerScore++;
             return `You lose! ${computerChoice} beats ${humanChoice}`;
         }else {

@@ -92,39 +92,3 @@ resetBtn.addEventListener("click", () =>{
     divRes.appendChild(par);
     body.removeChild(resetBtn);
 });
-
-
-
-
-
-
-
-/*
-function playGame(){
-    let humanScore = 0;
-    let computerScore = 0;
-
-    function playRound (humanChoice, computerChoice){
-        //evaluates if the human won
-        if (isWinner(humanChoice, computerChoice)){
-            humanScore++;
-            return `You won! ${humanChoice} beats ${computerChoice}`;
-        }
-        //evaluates if the computer won
-        else if (isWinner(computerChoice, humanChoice)){
-            computerScore++;
-            return `You lose! ${computerChoice} beats ${humanChoice}`;
-        }else {
-            return `Tied! both chose ${humanChoice}`;
-        }
-    }
-
-    for (let i = 0; i < 5; i++){
-        console.log(playRound(getHumanChoice(i+1), getComputerChoice()));
-    }
-    alert (`Game Finished\nHuman Score: ${humanScore}, Computer Score: ${computerScore}`);
-}
-    
-
-playGame();
-*/
